@@ -1,4 +1,4 @@
-# Tasks API + Calculator Frontend
+# Calculator Frontend
 
 This project is a simple full-stack web app with:
 
