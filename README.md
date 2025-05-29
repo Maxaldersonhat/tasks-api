@@ -1,46 +1,108 @@
-# Getting Started with Create React App
+# Tasks API + Calculator Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a simple full-stack web app with:
 
-## Available Scripts
+- **Backend:** Laravel API (for user authentication and calculator operations)
+- **Frontend:** React (with Tailwind CSS) for login and calculator UI
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🔧 Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Backend (Laravel)
+- REST API for:
+  - `/api/auth/login`: Dummy login returning a token
+  - `/api/calculator`: Perform calculations and store results
+  - `/api/calculation/{id}`: Retrieve a specific calculation
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Frontend (React)
+- Login form (with dummy credentials)
+- Calculator screen (after login)
+- Tailwind CSS styling
+- Token stored in `localStorage` and used for authentication
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📦 Project Structure
 
-### `npm run build`
+tasks-api/
+│
+├── backend/ # Laravel API
+│ ├── routes/api.php
+│ ├── app/Http/Controllers/
+│ └── ...
+│
+├── frontend/ # React App
+│ ├── src/components/
+│ ├── src/pages/Login.jsx
+│ └── ...
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+yaml
+Copy code
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🖥️ Setup Instructions
 
-### `npm run eject`
+### 1. Clone the repo
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+git clone https://github.com/Maxaldersonhat/tasks-api-frontend.git
+cd tasks-api
+2. Backend (Laravel)
+Install dependencies:
+bash
+Copy code
+cd backend
+composer install
+Set up .env:
+bash
+Copy code
+cp .env.example .env
+php artisan key:generate
+Run migrations:
+bash
+Copy code
+php artisan migrate
+Serve the API:
+bash
+Copy code
+php artisan serve
+Default API URL: http://127.0.0.1:8000
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Frontend (React)
+Install dependencies:
+bash
+Copy code
+cd ../frontend
+npm install
+Start the React app:
+bash
+Copy code
+npm start
+React app runs on: http://localhost:3000
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+🔐 Dummy Login Details
+Use any valid email + password combo to log in.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Example:
 
-## Learn More
+plaintext
+Copy code
+Email: test@example.com
+Password: secret
+🧪 API Testing (Optional)
+You can test API endpoints using Postman:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+POST /api/auth/login – Dummy login
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+POST /api/calculator – Submit a calculation
+
+GET /api/calculation/{id} – Retrieve stored result
+
+📜 License
+This project is open-sourced for learning purposes. Customize and use as you like!
+
+✨ Author
+Max Brian Mwaura
+GitHub: @Maxaldersonhat
